@@ -11,10 +11,10 @@ This repository contains some notes and ideas on moving data and deploying schem
 
 ### Examples in this repository
 Based on Microsoft and open source tooling it's possible to migrate your database in separate steps, Schema migration and Data migration. 
-* _[Schema Migration]_ 01_sqlcmd_schema_import.ps1 - Option using SQLCMD to execute sql-file(s) containing the database objects that have been exported with [Data Migration Assistant](https://docs.microsoft.com/en-us/sql/dma/dma-overview) or [SQL Server Management Studio Generate Scripts](https://docs.microsoft.com/en-us/sql/ssms/tutorials/scripting-ssms?view=sql-server-ver15).  
-* _[Schema Migration]_ 02_sqlpackage_schema_migration.ps1 - Option using sqlpackage to _extract_ a DACPAC-file from the source SQL Server instance (for example SQL Server on a Virtual Machine) and _publish_ the DACPAC-file to a Azure SQL Database target.
-* _[Data Migration]_ 03_dbatools_data_migration.ps1 - Using the PowerShell function Copy-DbaDbTableData included in to copy the data from Source to Target tables [dbatools](https://dbatools.io)
-* _[Data Migration]_ 03_smartbulkcopy_example_to_be_created.ps1 - Using PowerShell to generate the table configuration and execute the smartbulkcopy project to execute the migration.
+* _[Schema Migration]_ [01_sqlcmd_schema_import.ps1](https://github.com/Ventilios/azuresqldb-migration-scripts/blob/main/01_sqlcmd_schema_import.ps1) - Option using SQLCMD to execute sql-file(s) containing the database objects that have been exported with [Data Migration Assistant](https://docs.microsoft.com/en-us/sql/dma/dma-overview) or [SQL Server Management Studio Generate Scripts](https://docs.microsoft.com/en-us/sql/ssms/tutorials/scripting-ssms?view=sql-server-ver15).  
+* _[Schema Migration]_ [02_sqlpackage_schema_migration.ps1](https://github.com/Ventilios/azuresqldb-migration-scripts/blob/main/02_sqlpackage_schema_migration.ps1) - Option using sqlpackage to _extract_ a DACPAC-file from the source SQL Server instance (for example SQL Server on a Virtual Machine) and _publish_ the DACPAC-file to a Azure SQL Database target.
+* _[Data Migration]_ [03_dbatools_data_migration.ps1](https://github.com/Ventilios/azuresqldb-migration-scripts/blob/main/03_dbatools_data_migration.ps1) - Using the PowerShell function Copy-DbaDbTableData included in to copy the data from Source to Target tables [dbatools](https://dbatools.io)
+* _[Data Migration]_ 03_smartbulkcopy_example_to_be_created.ps1 - Using PowerShell to generate the table configuration and execute the [smartbulkcopy project](https://github.com/Azure-Samples/smartbulkcopy) execute the migration.
 
 ### Considerations
 * When generating scripts for model deployment consider to break it up by excluding indexes at initial deployment, insert the data and post-deploy the indexes.
