@@ -19,3 +19,4 @@ Based on Microsoft and open source tooling it's possible to migrate your databas
 ### Considerations
 * When generating scripts for model deployment consider to break it up by excluding indexes at initial deployment, insert the data and post-deploy the indexes.
 * Leverage a higher SKU; more DTU or vCore but also consider General Purpose versus Business Critical (more I/O througput). Scale down after the migration.
+* Changing the Packet Size when connecting to Azure SQL Database with sqlcmd ("-a packet_size" parameter) will have no affect. 
